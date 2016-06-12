@@ -21,7 +21,10 @@ function ChangeBackground() {
 	document.getElementById("background").style.background="url("+imageUrls[i]+")";
 }
 
+
+R = false;
 function GenerateSentences() {
+	SKIP = false;//SPEED
 	document.getElementById("main-txt").innerHTML = "";
 
 	wrapRight = "</span></span>";
@@ -43,10 +46,15 @@ function GenerateSentences() {
 		k = Math.floor(Math.random() * sentences.length);
 		letter = 0
 		if(i < nbrPhrase){
-			writeLetter()
+			if (R) skipToSentence();
+			else writeLetter()
 		}
 		else {
 			WRITING = false;
+		}
+		
+		function skipToSentence() {
+			document.getElementById("whiteline"+i).innerHTML += sentences[k];	
 		}
 		
 		function writeLetter(){
@@ -55,13 +63,15 @@ function GenerateSentences() {
 			
 			letter+=1;
 			if(letter < sentences[k].length) {
-				if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, 30 + Math.random()*20);
-				else if (sentences[k].charAt(letter-1) == ',') TIMEOUT = setTimeout(writeLetter, 100 + Math.random()*150);
-				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, 30 + Math.random()*20)
-				else TIMEOUT = setTimeout(writeLetter, 30)
+				if(SKIP) writeLetter()
+				
+				else if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, (30 + Math.random()*20));
+				else if (sentences[k].charAt(letter-1) == ',') TIMEOUT = setTimeout(writeLetter, (100 + Math.random()*150));
+				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, (30 + Math.random()*20))
+				else TIMEOUT = setTimeout(writeLetter, (30))
 			}
 			else {
-				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
+				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, R*(180 + Math.random()*300))
 			}
 		}
 	};
@@ -107,6 +117,10 @@ function onLoad() {
 }
 
 function onKeydown(e) {
+	if (e.keyCode == 13) {
+		SKIP = true;
+	}
+
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
 		clearTimeout(TIMEOUT);

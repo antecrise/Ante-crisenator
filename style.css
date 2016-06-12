@@ -9,6 +9,13 @@ body {
 	background: black;
 }
 
+::selection {
+  background: black; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: black; /* Gecko Browsers */
+}
+
 #background-txt {
 	font-family: monospace;
 	font-size: 18pt;
@@ -68,6 +75,6 @@ body {
 }
 
 .whiteline {
-	background-color: rgb(0, 0, 0);
+	background-color: #770000;
 	font-variant: small-caps;
 }	
