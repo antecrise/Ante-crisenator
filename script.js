@@ -96,7 +96,6 @@ GenerateBackgroundTxt();
 
 window.onload = onLoad;
 
-
 function onLoad() {
 	TIMEOUT = setTimeout(GenerateSentences, 1000)
 	//Précharger les images
