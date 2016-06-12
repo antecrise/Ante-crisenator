@@ -94,7 +94,19 @@ ChangeBackground();
 
 GenerateBackgroundTxt();
 
-window.onload = function () { TIMEOUT = setTimeout(GenerateSentences, 1000) } 
+window.onload = onLoad;
+
+function onLoad() {
+	TIMEOUT = setTimeout(GenerateSentences, 1000)
+	
+	//Précharger les images
+	nbrImages = 10
+	for(i=1; i <=10; i++ ) {
+		document.getElementById("preload"+i).style.background = "url("+i+".jpg) no-repeat -9999px -9999px";
+		
+	}
+	
+}
 
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
