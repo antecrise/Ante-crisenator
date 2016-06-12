@@ -94,13 +94,14 @@ ChangeBackground();
 
 GenerateBackgroundTxt();
 
-window.onload = function () { GenerateSentences() } 
+window.onload = function () { TIMEOUT = setTimeout(GenerateSentences, 1000) } 
 
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
 		clearTimeout(TIMEOUT);
-		GenerateSentences();
+		document.getElementById("main-txt").innerHTML = "";
+		TIMEOUT = setTimeout(GenerateSentences, 500);
 		ChangeBackground();
 	}
 }
