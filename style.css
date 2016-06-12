@@ -33,15 +33,16 @@ body {
 
 #background {
 	background: black;
-
+	
 	width: 650px;
 	overflow: scroll;
 	display: table;
 	text-align: justify;
 	position: relative;
 	margin: auto;
-	top: 100px;
-	border-style: solid;
+	border-style: solid;		
+	
+	top: 80px;
 }
 
 #main-txt {
@@ -57,7 +58,7 @@ body {
 	text-align: justify;
 	position: relative;
 	margin: auto;
-	top: 100px;
+	top: 80px;
 }
 
 #linewrapper {

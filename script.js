@@ -90,7 +90,6 @@ function GenerateBackgroundTxt(){
 	}
 }
 
-
 GenerateSentences();
 
 ChangeBackground();
@@ -106,6 +105,14 @@ function onKeydown(e) {
 	}
 }
 
-document.addEventListener("keydown", onKeydown)
+function onResize() {
+	toppp = (window.innerHeight - 600)/2;
+	console.log(toppp);
+	document.getElementById("background").style.top = Math.max(0,toppp)+"px";
+}
 
+onResize();
+
+document.addEventListener("keydown", onKeydown);
+window.addEventListener("resize", onResize);
 
