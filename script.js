@@ -96,7 +96,7 @@ function GenerateBackgroundTxt(){
 	}
 	
 	for (i=0; i < 50; i++){
-		document.getElementById("background-txt").innerHTML += s.substring(Math.floor(Math.random()*100));
+		document.getElementById("background-txt").innerHTML += s.substring(Math.floor(Math.random()*1000)) +"</br>";
 	}
 }
 

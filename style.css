@@ -28,6 +28,7 @@ body {
 	text-transform: uppercase;
 	overflow: hidden;
 	float: left;
+	text-align: justify;
 	
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -35,6 +36,7 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	white-space: nowrap;
 }
 
 #background {
@@ -43,6 +45,7 @@ body {
 	width: 650px;
 	overflow: scroll;
 	display: table;
+	text-align: justify;
 	position: relative;
 	margin: auto;
 	border-style: solid;		
