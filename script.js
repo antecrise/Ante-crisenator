@@ -41,7 +41,7 @@ function GenerateSentences() {
 	i = 0
 	function writeSentence(i) {
 		WRITING = true;
-		document.getElementById("main-txt").innerHTML += "<span id=\"linewrapper\"><span class=\"whiteline\" id=\"whiteline"+i+"\">" + wrapRight;
+		document.getElementById("main-txt").innerHTML += "<span id=\"linewrapper\"><span class=\"whiteline\" id=\"whiteline"+i+"\" style=text-align: left;>" + wrapRight;
 	
 		k = Math.floor(Math.random() * sentences.length);
 		letter = 0
@@ -71,7 +71,7 @@ function GenerateSentences() {
 				else TIMEOUT = setTimeout(writeLetter, (30))
 			}
 			else {
-				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, R*(180 + Math.random()*300))
+				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
 			}
 		}
 	};
