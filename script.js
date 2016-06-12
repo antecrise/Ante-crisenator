@@ -2,13 +2,6 @@ sentences = ["L'autre jour, moé pis ma gang d'imbéciles, on était pas mal sao
 
 imageUrls = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"]
 
-nbrKeySounds = 16;
-audio = [];
-
-for(i=0; i< nbrKeySounds; i++) {
-	audio.push(new Audio('sound/chopW_'+i+'.wav'))
-}
-
 WRITING = false;
 TIMEOUT = -1;
 
@@ -41,7 +34,7 @@ function GenerateSentences() {
 	i = 0
 	function writeSentence(i) {
 		WRITING = true;
-		document.getElementById("main-txt").innerHTML += "<span id=\"linewrapper\"><span class=\"whiteline\" id=\"whiteline"+i+"\" style=text-align: left;>" + wrapRight;
+		document.getElementById("main-txt").innerHTML += "<span id=\"linewrapper\"><span class=\"whiteline\" id=\"whiteline"+i+"\">" + wrapRight;
 	
 		k = Math.floor(Math.random() * sentences.length);
 		letter = 0
@@ -59,8 +52,6 @@ function GenerateSentences() {
 		
 		function writeLetter(){
 			document.getElementById("whiteline"+i).innerHTML += sentences[k].charAt(letter) ;
-			//audio[math.floor(nbrKeySounds*Math.random())].play()
-			
 			letter+=1;
 			if(letter < sentences[k].length) {
 				if(SKIP) writeLetter()

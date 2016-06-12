@@ -63,8 +63,8 @@ body {
 	height: 600px;
 	overflow: scroll;
 	display: table;
-	text-align: left;
 	position: relative;
+	text-align: justify;
 	margin: auto;
 	top: 80px;
 }
