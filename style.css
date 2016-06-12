@@ -1,0 +1,72 @@
+@font-face { font-family: Gothic-condensed; src: url('League-Gothic/LeagueGothic-CondensedRegular.otf'); } 
+@font-face { font-family: Gothic; src: url('League-Gothic/LeagueGothic-CondensedRegular.otf'); } 
+
+
+
+html { overflow-y: hidden; overflow-x: hidden; }
+
+body {
+	background: black;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#background-txt {
+	font-family: monospace;
+	font-size: 18pt;
+	word-spacing: -0.5em;
+	line-height: 80%;
+	
+
+	color: #eeeeee;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	overflow: hidden;
+	float: left;
+	text-align: justify;
+}
+
+#background {
+	
+
+	width: 650px;
+	overflow: scroll;
+	display: table;
+	text-align: justify;
+	position: relative;
+	margin: auto;
+	top: 100px;
+	border-style: solid;
+}
+
+#main-txt {
+	font-family: monospace;
+
+	font-size: 12pt;
+
+	color: white;
+	width: 600px;
+	height: 600px;
+	overflow: scroll;
+	display: table;
+	text-align: justify;
+	position: relative;
+	margin: auto;
+	top: 100px;
+}
+
+#linewrapper {
+	line-height: 23px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.whiteline {
+	background-color: rgb(0, 0, 0);
+	font-variant: small-caps;
+}	
