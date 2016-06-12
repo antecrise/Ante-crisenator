@@ -55,13 +55,13 @@ function GenerateSentences() {
 			
 			letter+=1;
 			if(letter < sentences[k].length) {
-				if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, 45 + Math.random()*20);
+				if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, 30 + Math.random()*20);
 				else if (sentences[k].charAt(letter-1) == ',') TIMEOUT = setTimeout(writeLetter, 100 + Math.random()*150);
-				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, 45 + Math.random()*20)
-				else TIMEOUT = setTimeout(writeLetter, 45)
+				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, 30 + Math.random()*20)
+				else TIMEOUT = setTimeout(writeLetter, 30)
 			}
 			else {
-				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 200 + Math.random()*300)
+				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
 			}
 		}
 	};
