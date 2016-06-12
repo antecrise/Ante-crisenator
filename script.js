@@ -101,8 +101,8 @@ function onKeydown(e) {
 		e.preventDefault();
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
-		TIMEOUT = setTimeout(GenerateSentences, 500);
 		ChangeBackground();
+		TIMEOUT = setTimeout(GenerateSentences, 500);
 	}
 }
 
