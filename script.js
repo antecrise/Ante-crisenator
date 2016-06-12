@@ -101,11 +101,7 @@ ChangeBackground();
 
 GenerateBackgroundTxt();
 
-window.onload = onLoad;
-
-function onLoad() {
-	TIMEOUT = setTimeout(GenerateSentences, 1000)
-}
+window.onload = function(){TIMEOUT = setTimeout(GenerateSentences, 1000)};
 
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
@@ -113,7 +109,7 @@ function onKeydown(e) {
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
 		ChangeBackground();
-		TIMEOUT = setTimeout(GenerateSentences, 500);
+		TIMEOUT = setTimeout(GenerateSentences, 750);
 	}
 }
 
