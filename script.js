@@ -5,6 +5,7 @@ imageUrls = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.
 //Précharger les images
 for(i=1; i <=imageUrls.length; i++ ) {
 	e = document.createElement("div");
+	document.body.appendChild(e);
 	e.style.background = "url("+i+".jpg) no-repeat -9999px -9999px";
 }
 
