@@ -55,18 +55,20 @@ body {
 
 #main-txt {
 	font-family: monospace;
-
+	
 	font-size: 12pt;
 
 	color: white;
 	width: 600px;
 	height: 600px;
-	overflow: scroll;
+	overflow: hidden;
+	overflow-x: hidden;
 	display: table;
 	position: relative;
 	text-align: justify;
 	margin: auto;
 	top: 80px;
+	white-space: nowrap;
 }
 
 #linewrapper {
