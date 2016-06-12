@@ -110,12 +110,10 @@ function onLoad() {
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
-		if(!WRITING) {
-			clearTimeout(TIMEOUT);
-			document.getElementById("main-txt").innerHTML = "";
-			ChangeBackground();
-			TIMEOUT = setTimeout(GenerateSentences, 750);
-		}
+		clearTimeout(TIMEOUT);
+		document.getElementById("main-txt").innerHTML = "";
+		ChangeBackground();
+		TIMEOUT = setTimeout(GenerateSentences, 750);
 	}
 }
 
