@@ -67,7 +67,8 @@ function GenerateSentences() {
 				else TIMEOUT = setTimeout(writeLetter, (30))
 			}
 			else {
-				TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
+				if (SKIP) writeSentence(i+1);
+				else TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300);
 			}
 		}
 	};
@@ -91,7 +92,7 @@ function GenerateBackgroundTxt(){
 		s += sentences[Math.floor(Math.random() * sentences.length)];
 	}
 	
-	for (i=0; i < 50; i++){
+	for (i=0; i < 150; i++){
 		document.getElementById("background-txt").innerHTML += s.substring(Math.floor(Math.random()*1000)) +"</br>";
 	}
 }
