@@ -2,13 +2,6 @@ sentences = ["L'autre jour, moé pis ma gang d'imbéciles, on était pas mal sao
 
 imageUrls = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"]
 
-//Précharger les images
-for(i=1; i <=imageUrls.length; i++ ) {
-	e = document.createElement("div");
-	document.body.appendChild(e);
-	e.style.background = "url("+i+".jpg) no-repeat -9999px -9999px";
-}
-
 nbrKeySounds = 16;
 audio = [];
 
@@ -101,7 +94,18 @@ ChangeBackground();
 
 GenerateBackgroundTxt();
 
-window.onload = function(){TIMEOUT = setTimeout(GenerateSentences, 1000)};
+window.onload = onLoad;
+
+
+function onLoad() {
+	TIMEOUT = setTimeout(GenerateSentences, 1000)
+	//Précharger les images
+	for(i=1; i <=imageUrls.length; i++ ) {
+		e = document.createElement("div");
+		document.body.appendChild(e);
+		e.style.background = "url("+i+".jpg) no-repeat -9999px -9999px";
+	}
+}
 
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
