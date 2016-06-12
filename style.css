@@ -7,6 +7,8 @@ html { overflow-y: hidden; overflow-x: hidden; }
 
 body {
 	background: black;
+	margin: 0px;
+	padding: 0px;
 }
 
 ::selection {
@@ -48,7 +50,8 @@ body {
 	text-align: justify;
 	position: relative;
 	margin: auto;
-	border-style: solid;		
+	border-style: solid;
+	border-color: black;
 	
 	top: 80px;
 }

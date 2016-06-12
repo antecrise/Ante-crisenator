@@ -16,6 +16,7 @@ function ChangeBackground() {
 
 function GenerateSentences() {
 	SKIP = false;
+	WRITING = true;
 	document.getElementById("main-txt").innerHTML = "";
 
 	wrapRight = "</span></span>";
@@ -32,7 +33,6 @@ function GenerateSentences() {
 	count = 0;
 	i = 0
 	function writeSentence(i) {
-		WRITING = true;
 		document.getElementById("main-txt").innerHTML += "<span id=\"linewrapper\"><span class=\"whiteline\" id=\"whiteline"+i+"\">" + wrapRight;
 	
 		k = Math.floor(Math.random() * sentences.length);
@@ -123,7 +123,7 @@ function onKeydown(e) {
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
 		ChangeBackground();
-		TIMEOUT = setTimeout(GenerateSentences, 750);
+		TIMEOUT = setTimeout(GenerateSentences, 500);
 	}
 }
 
