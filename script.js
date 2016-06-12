@@ -90,11 +90,11 @@ function GenerateBackgroundTxt(){
 	}
 }
 
-GenerateSentences();
-
 ChangeBackground();
 
 GenerateBackgroundTxt();
+
+window.onload = function () { GenerateSentences() } 
 
 function onKeydown(e) {
 	if (e.keyCode == 116 || e.keyCode == 82){
