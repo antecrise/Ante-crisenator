@@ -53,7 +53,7 @@ function GenerateSentences() {
 				count = 0;
 				document.getElementById("whiteline"+i).innerHTML += "</br>";
 			}
-			else if (count > 70 ) {
+			else if (count > 73 ) {
 				count = 0;
 				document.getElementById("whiteline"+i).innerHTML += "</br>";
 			}
