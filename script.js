@@ -115,6 +115,7 @@ function onLoad() {
 }
 
 function onKeydown(e) {
+	console.log(e.keyCode);
 	if (e.keyCode == 13) {
 		SKIP = true;
 	}
@@ -126,11 +127,13 @@ function onKeydown(e) {
 		ChangeBackground();
 		TIMEOUT = setTimeout(GenerateSentences, 500);
 	}
+	if (e.keyCode == 32 || (37 <= e.keyCode && 40 >= e.keyCode)) {
+		e.preventDefault();
+	}
 }
 
 function onResize() {
 	toppp = (window.innerHeight - 600)/2;
-	console.log(toppp);
 	document.getElementById("background").style.top = Math.max(0,toppp)+"px";
 }
 
