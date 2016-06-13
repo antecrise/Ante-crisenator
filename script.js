@@ -9,6 +9,11 @@ minPhrases = 5;
 nbrMoyenPhrases = 5;
 
 BOOP = new Audio('https://github.com/antecrise/antecrise.github.io/blob/master/boop.m4a?raw=true');
+keySounds = []
+for (i=0; i < 9; i++){
+	keySounds.push(new Audio("sound/switch_"+i+".wav"));
+}
+
 
 function ChangeBackground() {
 	n = imageUrls.length;
@@ -49,6 +54,7 @@ function GenerateSentences() {
 		
 		function writeLetter(sentence){
 			document.getElementById("whiteline"+i).innerHTML += sentence.charAt(letter) ;
+			keySounds[Math.floor(Math.random()*keySounds.length)].play()
 			letter+=1;
 			count += 1;
 			
@@ -107,7 +113,7 @@ GenerateBackgroundTxt();
 window.onload = onLoad;
 
 function onLoad() {
-	BOOP.play()
+	//BOOP.play()
 	TIMEOUT = setTimeout(GenerateSentences, 1200)
 	//Précharger les images
 	for(i=1; i <=imageUrls.length; i++ ) {
@@ -125,7 +131,7 @@ function onKeydown(e) {
 
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
-		BOOP.play()
+		//BOOP.play()
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
 		ChangeBackground();
