@@ -8,6 +8,8 @@ TIMEOUT = -1;
 minPhrases = 5;
 nbrMoyenPhrases = 5;
 
+audio = new Audio('boop.m4a');
+
 function ChangeBackground() {
 	n = imageUrls.length;
 	i = Math.floor( Math.random() * n );
@@ -38,34 +40,34 @@ function GenerateSentences() {
 		k = Math.floor(Math.random() * sentences.length);
 		letter = 0
 		if(i < nbrPhrase){
-			writeLetter()
+			writeLetter(sentences[k])
 		}
 		else {
+			audio.play();
 			WRITING = false;
 		}
 		
-		function writeLetter(){
-			document.getElementById("whiteline"+i).innerHTML += sentences[k].charAt(letter) ;
+		function writeLetter(sentence){
+			document.getElementById("whiteline"+i).innerHTML += sentence.charAt(letter) ;
 			letter+=1;
 			count += 1;
 			
-			if(count > 64 && sentences[k].charAt(letter) == ' ') {
+			if(count > 64 && sentence.charAt(letter) == ' ') {
 				count = 0;
 				document.getElementById("whiteline"+i).innerHTML += "</br>";
 			}
-			else if (count > 70 ) {
+			else if (count > 69 ) {
 				count = 0;
 				document.getElementById("whiteline"+i).innerHTML += "</br>";
 			}
 			
-			if(letter < sentences[k].length) {
-				if(SKIP) writeLetter()
-				
-				else if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, (30 + Math.random()*20));
-				else if (sentences[k].charAt(letter-1) == ',') TIMEOUT = setTimeout(writeLetter, (100 + Math.random()*150));
-				else if ((sentences[k].charAt(letter-1) == '!')) TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
-				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, (25 + Math.random()*20))
-				else TIMEOUT = setTimeout(writeLetter, (25))
+			if(letter < sentence.length) {
+				if(SKIP) writeLetter(sentences[k])
+				else if (sentence.charAt(letter-1) == ' ') TIMEOUT = setTimeout(function(){writeLetter(sentences[k])}, (30 + Math.random()*20));
+				else if (sentence.charAt(letter-1) == ',') TIMEOUT = setTimeout(function(){writeLetter(sentences[k])}, (100 + Math.random()*150));
+				else if ((sentence.charAt(letter-1) == '!')) TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
+				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(function(){writeLetter(sentences[k])}, (25 + Math.random()*20))
+				else TIMEOUT = setTimeout(function(){writeLetter(sentences[k])}, (25))
 			}
 			else {
 				if (SKIP) writeSentence(i+1);
