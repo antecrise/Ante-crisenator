@@ -55,7 +55,7 @@ function GenerateSentences() {
 			}
 			else if (count > 69 ) {
 				count = 0;
-				document.getElementById("whiteline"+i).innerHTML += "-</br>";
+				document.getElementById("whiteline"+i).innerHTML += "</br>";
 			}
 			
 			if(letter < sentences[k].length) {
@@ -63,8 +63,9 @@ function GenerateSentences() {
 				
 				else if (sentences[k].charAt(letter-1) == ' ') TIMEOUT = setTimeout(writeLetter, (30 + Math.random()*20));
 				else if (sentences[k].charAt(letter-1) == ',') TIMEOUT = setTimeout(writeLetter, (100 + Math.random()*150));
-				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, (30 + Math.random()*20))
-				else TIMEOUT = setTimeout(writeLetter, (30))
+				else if ((sentences[k].charAt(letter-1) == '!')) TIMEOUT = setTimeout(function(){writeSentence(i+1)}, 180 + Math.random()*300)
+				else if (Math.random() < 0.9 ) TIMEOUT = setTimeout(writeLetter, (25 + Math.random()*20))
+				else TIMEOUT = setTimeout(writeLetter, (25))
 			}
 			else {
 				if (SKIP) writeSentence(i+1);
