@@ -8,7 +8,7 @@ TIMEOUT = -1;
 minPhrases = 5;
 nbrMoyenPhrases = 5;
 
-BOOP = new Audio('boop.m4a');
+BOOP = new Audio('https://github.com/antecrise/antecrise.github.io/blob/master/boop.m4a?raw=true');
 
 function ChangeBackground() {
 	n = imageUrls.length;
