@@ -48,9 +48,9 @@ function GenerateSentences() {
 			writeLetter(sentences[k])
 		}
 		else {
+			BOOP.play();
 			audio.play();
 			WRITING = false;
-			BOOP.play();
 		}
 		
 		function writeLetter(sentence){
