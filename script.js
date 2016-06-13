@@ -50,6 +50,7 @@ function GenerateSentences() {
 		else {
 			audio.play();
 			WRITING = false;
+			BOOP.play();
 		}
 		
 		function writeLetter(sentence){
@@ -113,7 +114,7 @@ GenerateBackgroundTxt();
 window.onload = onLoad;
 
 function onLoad() {
-	BOOP.play()
+	//BOOP.play()
 	TIMEOUT = setTimeout(GenerateSentences, 1200)
 	//Précharger les images
 	for(i=1; i <=imageUrls.length; i++ ) {
@@ -131,7 +132,7 @@ function onKeydown(e) {
 
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
-		BOOP.play()
+		//BOOP.play()
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
 		ChangeBackground();
