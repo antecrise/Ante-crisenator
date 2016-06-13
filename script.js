@@ -8,7 +8,7 @@ TIMEOUT = -1;
 minPhrases = 5;
 nbrMoyenPhrases = 5;
 
-audio = new Audio('boop.m4a');
+BOOP = new Audio('boop.m4a');
 
 function ChangeBackground() {
 	n = imageUrls.length;
@@ -107,7 +107,8 @@ GenerateBackgroundTxt();
 window.onload = onLoad;
 
 function onLoad() {
-	TIMEOUT = setTimeout(GenerateSentences, 1000)
+	BOOP.play()
+	TIMEOUT = setTimeout(GenerateSentences, 1200)
 	//Précharger les images
 	for(i=1; i <=imageUrls.length; i++ ) {
 		e = document.createElement("div");
@@ -124,10 +125,11 @@ function onKeydown(e) {
 
 	if (e.keyCode == 116 || e.keyCode == 82){
 		e.preventDefault();
+		BOOP.play()
 		clearTimeout(TIMEOUT);
 		document.getElementById("main-txt").innerHTML = "";
 		ChangeBackground();
-		TIMEOUT = setTimeout(GenerateSentences, 500);
+		TIMEOUT = setTimeout(GenerateSentences, 1200);
 	}
 	if (e.keyCode == 32 || (37 <= e.keyCode && 40 >= e.keyCode)) {
 		e.preventDefault();
